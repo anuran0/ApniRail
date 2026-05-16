@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+  font-family:  'Poppins', sans-serif;}
+
+nav{
+  display: flex;
+  height: 100px;
+  width: 100%;
+  background: #ffffff;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+}
+.logo-text{
+    display: flex;
+    align-items: center;
+    
+}
+nav .logo{
+  background-image: url("Assets/Indian_Railways_logo.png");
+  background-size: cover;
+  height: 80px;
+  width: 80px;
+  
+}
+.navtext{
+    margin-left: 10px;
+}
+.head1{
+
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    font-size: 32px;
+}
+.head2{
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    
+}
+
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #000000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #0091ff;
+  background: #ffffff;
+}
+nav .menu-btn i{
+  color: #000000;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #ffffff;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: #0091ff;
+  }
+}
+
+
+.chat-container {
+    background-color: #1f1f1f;
+    padding:30px;
+    border-radius: 25px;
+    color: white;
+    max-width: 1400px;
+    height: 1000px;
+    margin: auto;
+    margin-top: 100px;
+    margin: 100px 26px;
+     
+   
+   
+
+}
+.message {
+    margin-top: 20px;
+    margin-left: 10px;
+    color: limegreen; 
+    font-size: 18px;
+}
+.options button {
+    background: #1f1f1f;
+    border-color: #f1c40f;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 14px;
+}
+
+
+
+
+/* Chatbot Input Container */
+
+.chatbot-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Wrapper */
+.input-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    border: 3px solid #e0e0e0;
+    padding: 8px;
+    background-color: #fff;
+    max-width: 650px;
+    
+}
+
+.input-field {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 1rem;
+}
+
+.input-field::placeholder {
+    font-style: italic;
+    color: #aaa;
+}
+
+.send-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.send-btn img {
+    height: 24px;
+    width: 24px;
+}
+
+/* Microphone Button */
+.mic-wrapper {
+    margin-left: 10px;
+}
+
+.mic-btn {
+    background-color: #ff477e;
+    border: none;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.mic-btn img {
+    height: 32px;
+    width: 32px;
+}
+
+/* Responsiveness */
+
+@media only screen and (max-width: 768px) {
+    .chatbot-input-container {
+        padding: 5px;
+    }
+    .input-wrapper {
+        
+        max-width: 580px;
+        
+    }
+
+    .input-field {
+        font-size: 0.9rem;
+    }
+
+    .send-btn img {
+        height: 20px;
+        width: 20px;
+    }
+
+    .mic-btn {
+        height: 70px;
+        width: 70px;
+    }
+    .mic-btn img {
+        height: 32px;
+        width: 32px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .input-wrapper {
+        padding: 5px;
+        max-width: 450px;
+    }
+
+    .input-field {
+        font-size: 0.8rem;
+    }
+
+    .mic-btn {
+        height: 60px;
+        width: 60px;
+    }
+    .mic-btn img {
+        height: 30px;
+        width: 30px;
+    }
+
+     .send-btn img {
+        height: 18px;
+        width: 18px;
+    }
+}
